@@ -6,7 +6,7 @@ const AllServices = ({service}) => {
 
     return (
        <div>
-            <Link to={`/services/${id}`}>
+            <Link to={`/service/${id}`}>
              <div className="relative flex w-76 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md"
              
              >
@@ -14,15 +14,26 @@ const AllServices = ({service}) => {
           <img src={image} className="h-full w-full object-cover" />
         </div>
         <div className="p-6">
-          <button className="mt-2 block text-sm  font-medium leading-normal antialiased p-[2px] mb-2"
-        
-          >
-            {name}
-          </button>
           <div className="mb-2 flex items-center justify-between">
-            <p className="block text-base font-semibold leading-relaxed text-blue-gray-900 antialiased"
+          <h3 className="mt-2 block text-red-500 text-xl font-bebasneue font-bold leading-normal antialiased p-[2px] mb-2"
+        
+        >
+          {name} </h3>
+
+            <p className="block text-base font-avenir font-bold leading-relaxed text-gray-900 antialiased"
             >
               {price}
+            </p>
+           
+          </div>
+          <div className="mb-2 flex items-center justify-between">
+            <p className="block text-base font-semibold leading-relaxed antialiased"
+            >
+              {
+            description.length > 200 ? <p>{description.slice(0, 200)}<Link to={`/service/${id}`} className="text-yellow-800 font-bold"> Read More ...</Link></p>
+            :
+            <p>{description}</p>
+        }
             </p>
            
           </div>
