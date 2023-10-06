@@ -3,6 +3,7 @@ import boy3 from '../../assets/boy3.png'
 import boy4 from '../../assets/boy4.png'
 import girl1 from '../../assets/girl1.jpg'
 import girl2 from '../../assets/girl2.jpg'
+import Services from '../Services/Services';
 
 const Home = () => {
   return (
@@ -20,6 +21,8 @@ const Home = () => {
 </section>
 
 <div>
+
+<Services></Services>
     
 <div className="w-full mx-auto max-w-md p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
     <div className="flex items-center justify-between mb-4">
