@@ -10,9 +10,8 @@ const Services = () => {
     console.log(initialServices);
     return (
         <div>
-            <h2 className="text-center text-3xl font-montserrat">Our Services</h2>
-
             <div className="py-10 mx-5 md:mx-15 my-5 md:my-15">
+                 <h2 className="text-center text-6xl font-montserrat">Our Services</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 py-10">
             {services.length === 0 ? (
               <p className="text-center text-red-500">No data found.</p>
