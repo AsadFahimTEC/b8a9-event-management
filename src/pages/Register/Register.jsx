@@ -1,13 +1,51 @@
-import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../Hook/AuthProvider";
+import toast from "react-hot-toast";
 
 const Register = () => {
+    const {createUser} = useContext(AuthContext);
+    const navigate = useNavigate();
+    
+
+    const handleRegister = (e) =>{
+        
+        
+        // access the form data
+        e.preventDefault();
+        const form = new FormData(e.currentTarget);
+        const name = form.get('name')
+        const photo = form.get('photo')
+        const email = form.get('email')
+        const password = form.get('password')
+        // console.log(name, photo, email, password);
+
+        // validation 
+        if(!/^(?=.*[A-Z])(?=.*[!@#$%^&*()_+{}[\]:;<>,.?~\\-]).{7,}$/.test(password)){
+            return toast.error('password at least 6 characters more and one capital letter and one special characters')
+        }
+
+        // create user
+        createUser(email, password)
+        .then(result =>{
+            console.log(result.user);
+            e.target.reset();
+            navigate('/') 
+            return toast.success('user created successfully');  
+        })
+        .catch(error =>{
+            console.log(error);
+            return toast.error('user not created')
+        })
+    }
+
   return (
     <div>
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="text-center lg:text-left"></div>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-            <form className="card-body">
+            <form onSubmit={handleRegister} className="card-body">
               <div className="form-control">
                 <h1 className="text-2xl text-[#403F3F] text-center font-semibold">
                   Register your account
