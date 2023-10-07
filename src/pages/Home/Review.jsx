@@ -9,7 +9,7 @@ const Review = () => {
           alt="tania andrew"
           className="relative inline-block h-[58px] w-[58px] !rounded-full object-cover object-center"
         />
-        <div className="flex w-full flex-col gap-0.5">
+        <div className="flex w-full flex-col gap-0.5 p-10">
           <div className="flex items-center justify-between">
             <h5 className="block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
               Afsar Ahmed
@@ -87,7 +87,7 @@ const Review = () => {
           </p>
         </div>
       </div>
-      <div className="mb-6 p-0">
+      <div className="mb-6 p-4">
         <p className="block font-sans text-base font-light leading-relaxed text-inherit antialiased">
           "Supporting Muslim festivals through your generous donations is a virtuous act that strengthens our community bonds and upholds the spirit of unity and celebration. By contributing to these festivals, you play a vital role in preserving our rich cultural traditions and sharing the joy of our faith with others."
         </p>
