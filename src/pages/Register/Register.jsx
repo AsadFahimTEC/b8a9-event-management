@@ -4,7 +4,7 @@ import { AuthContext } from "../../Hook/AuthProvider";
 import toast from "react-hot-toast";
 
 const Register = () => {
-    const {createUser} = useContext(AuthContext);
+    const {createUser, updateProfiles} = useContext(AuthContext);
     const navigate = useNavigate();
     
 
@@ -27,17 +27,17 @@ const Register = () => {
 
         // create user
         createUser(email, password)
-        .then(result =>{
+        .then((result) => {
+            updateProfiles(name, photo)
             console.log(result.user);
-            e.target.reset();
-            navigate('/');
-            return toast.success('user created successfully');  
-        })
+            navigate('/')
+           return toast.success('user created successfully')
+    })
         .catch(error =>{
             console.log(error);
-            return toast.error('user not created')
+             return toast.error('user already exists')
         })
-    }
+    };
 
   return (
     <div>
