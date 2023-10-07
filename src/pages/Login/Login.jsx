@@ -1,13 +1,47 @@
-import { Link } from "react-router-dom";
+
+import { useContext } from "react";
+import { Link, useLocation, useNavigate} from "react-router-dom";
+import { AuthContext } from "../../Hook/AuthProvider";
+import toast from "react-hot-toast";
+
 
 const login = () => {
+    const {signIn} = useContext(AuthContext)
+    const location = useLocation();
+    const navigate = useNavigate();
+    console.log('location in the login page', location);
+
+    const handleLogin = (e) =>{
+        // access the form data
+        e.preventDefault();
+        const form = new FormData(e.currentTarget);
+        const email = form.get('email')
+        const password = form.get('password')
+        // console.log(name, photo, email, password);
+
+        // sign in a user
+        signIn(email, password)
+        .then(result =>{
+            console.log(result.user);
+            e.target.reset();
+
+            // navigate after login
+            navigate(location?.state ?location.state : '/');
+            return toast.success('user login successfully');  
+        })
+        .catch(error =>{
+            console.log(error);
+            return toast.error('password or email not match')
+        })
+    }
+
   return (
     <div>
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="text-center lg:text-left"></div>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-            <form className="card-body">
+            <form onSubmit={handleLogin} className="card-body">
               <div className="form-control">
                 <h1 className="text-3xl text-[#403F3F] text-center font-semibold">
                   Login your account

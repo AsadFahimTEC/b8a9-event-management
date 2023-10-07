@@ -30,7 +30,7 @@ const Register = () => {
         .then(result =>{
             console.log(result.user);
             e.target.reset();
-            navigate('/') 
+            navigate('/');
             return toast.success('user created successfully');  
         })
         .catch(error =>{
