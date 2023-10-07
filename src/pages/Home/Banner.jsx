@@ -1,8 +1,16 @@
 
+import 'aos/dist/aos.css';
+import Aos from "aos";
+import { useEffect } from 'react';
 
 const Banner = () => {
+  // initialized aos package
+  useEffect(() =>{
+    Aos.init({duration: 1000});
+  }, [])
+
   return (
-    <div className="bg-blue-100">
+    <div className="bg-blue-100" data-aos="fade-down">
       <section className="mt-6 font-montserrat dark:bg-gray-900">
         <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
           <div className="mr-auto place-self-center lg:col-span-7">

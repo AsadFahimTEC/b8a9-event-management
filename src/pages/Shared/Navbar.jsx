@@ -1,9 +1,17 @@
 import { Link, NavLink } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AuthContext } from "../../Hook/AuthProvider";
+
+// import 'aos/dist/aos.css';
+// import Aos from "aos";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
+
+  // initialized aos package
+  // useEffect(() =>{
+  //   Aos.init();
+  // }, [])
 
   // sign out a user
   const handleLogOut = () => {
@@ -82,7 +90,7 @@ const Navbar = () => {
                   onClick={handleLogOut}
                   className="font-avenir mr-10 px-2 py-1 rounded bg-green-900 text-white"
                 >
-                  Sign out
+                  Log out
                 </button>
               </li>
             </ul>

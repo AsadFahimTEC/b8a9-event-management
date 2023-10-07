@@ -1,13 +1,18 @@
-import React from 'react';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import 'aos/dist/aos.css';
+import Aos from "aos";
 
 const AllServices = ({service}) => {
+  useEffect(() =>{
+    Aos.init({duration: 2000});
+  }, [])
+
     const {image, id, price, name, description} = service || {};
 
     return (
        <div>
-             <div className="relative flex w-76 h-96 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md"
-             
+             <div className="relative flex w-76 h-96 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md" data-aos="zoom-out-down"
              >
         <div className="relative mx-4 mt-4 overflow-hidden rounded-xl bg-white bg-clip-border text-gray-700">
           <img src={image} className="h-full w-full object-cover" />
