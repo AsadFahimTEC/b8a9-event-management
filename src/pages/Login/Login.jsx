@@ -6,10 +6,27 @@ import toast from "react-hot-toast";
 
 
 const login = () => {
-    const {signIn} = useContext(AuthContext)
+    const {signIn, googleSignIn} = useContext(AuthContext)
     const location = useLocation();
     const navigate = useNavigate();
     console.log('location in the login page', location);
+
+    // google login
+    const handleGoogleLogin = () =>{
+        googleSignIn()
+        .then(result =>{
+            console.log(result.user);
+
+            // navigate after login
+            navigate(location?.state ?location.state : '/');
+            return toast.success('google login successfully');  
+        })
+        .catch(error =>{
+            console.log(error);
+            return toast.error('password or email not match')
+        })
+
+    }
 
     const handleLogin = (e) =>{
         // access the form data
@@ -34,6 +51,8 @@ const login = () => {
             return toast.error('password or email not match')
         })
     }
+
+   
 
   return (
     <div>
@@ -80,7 +99,7 @@ const login = () => {
                 </button>
               </div>
               <div className="form-control mt-1">
-                <button className="p-2 rounded bg-red-600 text-white">
+                <button onClick={handleGoogleLogin} className="p-2 rounded bg-red-600 text-white">
                   Login With Google
                 </button>
               </div>
