@@ -7,7 +7,8 @@ const Services = () => {
     const initialServices = useLoaderData();
     const [services, setServices] = useState(initialServices);
 
-    console.log(initialServices);
+    // console.log(initialServices);
+    
     return (
         <div>
             <div className="py-10 mx-5 md:mx-15 my-5 md:my-15">

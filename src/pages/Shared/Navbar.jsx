@@ -53,21 +53,14 @@ const Navbar = () => {
             {navLinks}
           </ul>
         </div>
-        <div className="w-12 h-12">
-        <img src={logo} alt="muslimfesti" />
-        </div>
         <p className="normal-case font-montserrat font-bold text-xl">MuslimFesti</p>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu font-avenir menu-horizontal px-1">{navLinks}</ul>
       </div>
       <div className="navbar-end">
-        <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-          <div className="w-10 rounded-full">
-            
-          </div>
-        </label>
-        {
+       
+          {
             user ? <>
             <span>{user.displayName}</span>
             <button onClick={handleLogOut} className="font-avenir mr-10 px-3 py-1 rounded bg-green-900 text-white">Sign out</button>
