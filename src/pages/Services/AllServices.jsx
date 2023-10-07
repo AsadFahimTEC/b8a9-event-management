@@ -6,7 +6,7 @@ const AllServices = ({service}) => {
 
     return (
        <div>
-             <div className="relative flex w-76 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md"
+             <div className="relative flex w-76 h-96 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md"
              
              >
         <div className="relative mx-4 mt-4 overflow-hidden rounded-xl bg-white bg-clip-border text-gray-700">
@@ -29,7 +29,7 @@ const AllServices = ({service}) => {
             <p className="block text-base font-semibold leading-relaxed antialiased"
             >
               {
-            description.length > 200 ? <p>{description.slice(0, 200)}<Link to={`/service/${id}`} className="text-yellow-800 font-bold">...</Link></p>
+            description.length > 150 ? <p>{description.slice(0, 150)}<Link to={`/service/${id}`} className="text-yellow-800 font-bold">...</Link></p>
             :
             <p>{description}</p>
         }
