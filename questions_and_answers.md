@@ -45,7 +45,7 @@ sum(1, "2");
 
 #### Answer: B: `TypeError`
 
-<i>B is true because the sum function takes two parameters a and b with addition(+) operator.However there is a type missmatch of two arguments here a(1) is number and b("2") is a string.However JavaScript tring to perform the string concatenation operation and wants to show the result is 12 but the sum function is excepting both a and b to be numbers not for handling the string concatenation operation so it will give a `TypeError` because of tring to adding a number and a string the function does not support it.</i>
+<i>B is true because the sum function takes two parameters a and b with addition(+) operator. However there is a type missmatch of two arguments here a(1) is number and b("2") is a string. However JavaScript tring to perform the string concatenation operation and wants to show the result is 12 but the sum function is excepting both a and b to be numbers not for handling the string concatenation operation so it will give a `TypeError` because of tring to adding a number and a string the function does not support it.</i>
 
 </p>
 </details>
