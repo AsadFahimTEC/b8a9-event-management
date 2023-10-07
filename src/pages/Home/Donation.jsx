@@ -2,10 +2,17 @@ import boy3 from "../../assets/boy3.png";
 import boy4 from "../../assets/boy4.png";
 import girl1 from "../../assets/girl1.jpg";
 import girl2 from "../../assets/girl2.jpg";
+import 'aos/dist/aos.css';
+import Aos from "aos";
+import { useEffect } from "react";
 
 const Donation = () => {
+  useEffect(() =>{
+    Aos.init({duration: 2000});
+  }, [])
+
   return (
-    <div className="w-full mx-auto max-w-md p-10 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+    <div className="w-full mx-auto max-w-md p-10 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700" data-aos="flip-up">
       <div className="flex items-center justify-between mb-4">
         <h5 className="text-xl font-bold leading-none text-gray-900 dark:text-white">
           Festival Donation Customers

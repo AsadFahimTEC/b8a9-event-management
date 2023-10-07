@@ -1,7 +1,14 @@
+import { useEffect } from "react";
+import 'aos/dist/aos.css';
+import Aos from "aos";
 
 const Review = () => {
+  useEffect(() =>{
+    Aos.init({duration: 2000});
+  }, [])
+
   return (
-    <div className="relative mt-5 flex mx-auto w-full max-w-[26rem] flex-col rounded-xl bg-transparent bg-clip-border text-gray-700 shadow-none">
+    <div className="relative mt-5 flex mx-auto w-full max-w-[26rem] flex-col rounded-xl bg-transparent bg-clip-border text-gray-700 shadow-none" data-aos="zoom-in-right">
         <h2 className="text-2xl font-avenir text-center">Review Section</h2>
       <div className="relative mx-0 mt-4 flex items-center gap-4 overflow-hidden rounded-xl bg-transparent bg-clip-border pt-0 pb-8 text-gray-700 shadow-none">
         <img
