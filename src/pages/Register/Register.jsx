@@ -25,7 +25,7 @@ const Register = () => {
             return toast.error('password at least 6 characters more and one capital letter and one special characters')
         }
 
-        // create user
+        // create user and update profiles
         createUser(email, password)
         .then((result) => {
             updateProfiles(name, photo)
